@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Name Portfolio</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    html {
+  scroll-behavior: smooth;
+}
+    
+    h2, h3{
+  color: #0F172A;
+}
+    body {
+      line-height: 1.6;
+      background-color: #F8FAFC;
+      color: #1E293B;
+    }
+    
+    section {
+  scroll-margin-top: 50px; /* adjust based on your header height */
+}
+    
+    
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    
+    .header {
+        background-color: #0F172A;
+  color: #FFFFFF;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #1a1a1a;
+      color: #fff;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      opacity: 0.89;
+    }
+    header img {
+      margin-top: 9px;
+      border-radius: 50px;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    
+    nav a {
+      margin-left: 20px;
+      font-size: 15px;
+        color: #E2E8F0;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: yellow;
+    }
+    
+    
+    #about h2 {
+  color: #6C3BFF;
+  font-family: Georgia;
+}
+
+    /* Home / Hero Section */
+    #home {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(111,166,154,0.809)),
+                  url("hero.jpg") center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    /* About Section */
+
+    #about {
+       background-color: #FFFFFF;
+      padding-top: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    #about .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 20px;
+    }
+    #about .about-text h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    #about .about-text p {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    #about .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    
+    
+    #about .about-image img {
+      margin-top:23px ;
+      height: 30%;
+      width: 30%;
+      max-width: 350px;
+      border-radius: 7%;
+    }
+
+    /* What I Do Section */
+    #what-i-do {
+      background-color: #F1F5F9;
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #what-i-do h2 {
+        color:  #6C3BFF;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+    #what-i-do .category {
+      margin-bottom: 60px;
+    }
+    #what-i-do .category h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #what-i-do .grid {
+      background-color: transparent;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      position: relative;
+    }
+    #what-i-do .grid img {
+        border: 3px solid rgba(216,214,208,0.809);
+        box-shadow: 0 0 8px rgba(34,33,31,0.809);
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    #what-i-do .grid .centered {
+      background-color: rgba(198,168,101,0.809);
+      grid-column: 1 / span 2;
+      justify-self: center;
+      width: 60%;
+    }
+
+    /* Hire Me Section */
+    #hire-me {
+        background: linear-gradient(135deg, #6C3BFF, #3B82F6);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    
+    #hire-me h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+    #hire-me p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hire-btn {
+      display: inline-block;
+      background-color: #fff;
+      color: #6C3BFF;
+      font-weight: bold;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .hire-btn:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-3px);
+    }
+    
+    
+
+    /* Footer */
+    #footer {
+    background-color: #0F172A;
+  color: #FFFFFF;
+      box-shadow: 0 -3px 6px rgba(0,0,0,0.2);
+      padding: 20px 0;
+      font-size: 0.9rem;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .footer-right a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+    }
+    .footer-right a:hover {
+      color: #2575fc;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      #about .about-text {
+        padding-right: 0;
+      }
+      #what-i-do .grid .centered {
+        width: 80%;
+      }
+      .footer-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header" class="header">
+    <a href="#home"><img src="profile.jpg" alt="Brand Logo"></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#what-i-do">What I Do</a>
+      <a href="#hire-me">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- Home / Hero Section -->
+  <section id="home">
+    <div class="hero-text">
+      <h1>Welcome to "Brand Name"</h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p><b>Hi! I’m Inigo Martinez, a creative designer. I specialize in crafting visually appealing posters, flyers, and custom T-shirt designs. My mission is to turn ideas into stunning visuals that leave a lasting impression.</b></p>
+    </div>
+    <div class="about-image">
+      <img src="profile.jpg" alt="Profile Image">
+    </div>
+  </section>
+
+  <!-- What I Do Section -->
+  <section id="what-i-do">
+    <h2>What I Do</h2>
+
+    <!-- Wedding Flyers -->
+    <div class="category">
+      <h3>Wedding Flyers</h3>
+      <div class="grid">
+        <img src="wedding1.jpg" alt="Wedding Flyer 1">
+        <img src="wedding1.jpg" alt="Wedding Flyer 3">
+        <img src="wedding2.jpg" alt="Wedding Flyer 2" class="centered">
+      </div>
+    </div>
+
+    <!-- Naming Ceremony Flyers -->
+    <div class="category">
+      <h3>Naming Ceremony Flyers</h3>
+      <div class="grid">
+        <img src="naming-ceremony.jpg" alt="Naming Ceremony Flyer 1">
+        <img src="naming-ceremony.jpg" alt="Naming Ceremony Flyer 2">
+        <img src="naming-ceremony.jpg" alt="Naming Ceremony Flyer 3" class="centered">
+      </div>
+    </div>
+
+    <!-- Citation Flyers -->
+    <div class="category">
+      <h3>Logo Design</h3>
+      <div class="grid">
+        <img src="logo.jpg" alt="Logo Design 1">
+        <img src="logo.jpg" alt="Logo Design 2">
+        <img src="logo.jpg" alt="Logo Design 3" class="centered">
+      </div>
+    </div>
+
+    <!-- Business Flyers -->
+    <div class="category">
+      <h3>Business Flyers</h3>
+      <div class="grid">
+        <img src="love.jpg" alt="Business Flyer 1">
+        <img src="abu.jpg" alt="Business Flyer 3">
+        <img src="bussines2.jpg" alt="Business Flyer 3" class="centered">
+      </div>
+    </div>
+    
+    <div class="category">
+      <h3>Birthday Flyers</h3>
+      <div class="grid">
+        <img src="birthday.jpg" alt="Business Flyer 1">
+        <img src="birthday.jpg" alt="Business Flyer 2">
+        <img src="birthday.jpg" alt="Business Flyer 3" class="centered">
+      </div>
+    </div>
+    </div>
+    
+    <div class="category">
+      <h3>Citation Flyers</h3>
+      <div class="grid">
+        <img src="thanks.jpg" alt="Business Flyer 1">
+        <img src="thanks.jpg" alt="Business Flyer 2">
+        <img src="thanks.jpg" alt="Business Flyer 3" class="centered">
+      </div>
+    </div>
+    
+    <div class="category">
+      <h3>Campaign Flyers</h3>
+      <div class="grid">
+        <img src="camp2.jpg" alt="Campaign Flyer 2">
+        <img src="camp1.jpg" alt="Campaign Flyer 1">
+        <img src="Gradu.jpg" alt="Campaign Flyer 3" class="centered">
+      </div>
+    </div>
+
+    <!-- T-shirt Designs -->
+    <div class="category">
+      <h3>T-shirt Designs</h3>
+      <div class="grid">
+        <img src="t-shirt.png" alt="T-shirt Design 1">
+        <img src="t-shirt.png" alt="T-shirt Design 2">
+        <img src="t-shirt.png" alt="T-shirt Design 3" class="centered">
+      </div>
+    </div>
+  </section>
+
+  <!-- Hire Me Section -->
+  <section id="hire-me">
+    <h2>Ready to bring your ideas to life?</h2>
+    <p>Hire me today!</p>
+    <a href="mailto:youremail@example.com" class="hire-btn">
+      <span>Contact Me</span>
+    </a>
+  </section>
+
+<footer id="footer">
+    <div class="footer-bottom">
+      &copy; 2026 Brand Name. All rights reserved.
+
+  </footer>
+
+</body>
+</html>
